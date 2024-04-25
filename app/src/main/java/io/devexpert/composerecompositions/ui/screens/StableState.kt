@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import io.devexpert.composerecompositions.ui.screens.shared.Screen
 import io.devexpert.composerecompositions.ui.screens.shared.TopBar
 
+@Stable
 data class Contact(var name: String)
 
 @Composable
