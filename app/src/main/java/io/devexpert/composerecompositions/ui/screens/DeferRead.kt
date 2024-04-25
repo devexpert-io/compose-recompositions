@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import io.devexpert.composerecompositions.ui.screens.shared.Screen
 import io.devexpert.composerecompositions.ui.screens.shared.TopBar
@@ -34,17 +35,17 @@ fun DeferRead() {
                     .padding(horizontal = 16.dp)
             ) {
                 Slider(value = sliderValue, onValueChange = { sliderValue = it })
-                RedBall(offset = sliderValue * 200)
+                RedBall(offset = { sliderValue * 200 })
             }
         }
     }
 }
 
 @Composable
-fun RedBall(offset: Float) {
+fun RedBall(offset: () -> Float) {
     Box(
         modifier = Modifier
-            .offset(offset.dp)
+            .offset { IntOffset(offset().toInt(), 0) }
             .size(56.dp)
             .clip(CircleShape)
             .background(Color.Red)
