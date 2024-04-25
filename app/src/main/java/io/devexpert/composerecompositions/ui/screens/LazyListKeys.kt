@@ -36,7 +36,7 @@ fun LazyListKeys() {
             LazyColumn(
                 contentPadding = padding
             ) {
-                items(movies) {
+                items(movies, key = { it.id }) {
                     MovieItem(movie = it)
                 }
             }
