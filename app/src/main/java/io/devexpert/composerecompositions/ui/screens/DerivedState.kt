@@ -7,6 +7,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import io.devexpert.composerecompositions.data.buildMovies
 import io.devexpert.composerecompositions.ui.screens.shared.Screen
@@ -19,7 +22,7 @@ fun DerivedState() {
 
     val scope = rememberCoroutineScope()
     val lazyState = rememberLazyListState()
-    val showScrollToTop = lazyState.firstVisibleItemIndex > 0
+    val showScrollToTop by remember { derivedStateOf { lazyState.firstVisibleItemIndex > 0 } }
 
     Screen {
         Scaffold(
