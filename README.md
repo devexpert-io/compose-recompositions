@@ -1,3 +1,7 @@
+> [!WARNING]
+> **Archivado · Archived.** Este repositorio ya no se mantiene y puede no compilar con versiones actuales. This repository is no longer maintained and may not build with current versions.
+> Lo que enseño ahora · What I teach now: [devexpert.io](https://devexpert.io)
+
 # Compose Recomposition Demo
 
 This project demonstrates various issues that can arise with recompositions in Jetpack Compose and how to solve them.
